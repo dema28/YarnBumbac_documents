@@ -1,0 +1,36 @@
+name: Deploy Yarn.md Docs to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs and plugins
+        run: |
+          pip install mkdocs-material
+          pip install mkdocs-git-revision-date-localized-plugin
+
+      - name: Build and Deploy
+        run: mkdocs gh-deploy --force
+
+      - name: Deployment Success Log
+        run: |
+          echo "Yarn.md Docs updated successfully!"
+          echo "Deployment time: $(date '+%Y-%m-%d %H:%M:%S')"
+          echo "Site URL: https://dema28.github.io/YarnBumbac_documents/"

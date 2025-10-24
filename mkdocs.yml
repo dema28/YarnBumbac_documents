@@ -1,0 +1,35 @@
+site_name: Bumbac.md Documentation
+site_url: https://docs.bumbac.md
+site_author: Denis Novicov
+repo_url: https://github.com/YarnMD/bumbac-docs
+theme:
+  name: material
+  language: ru
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/YarnMD
+nav:
+  - Главная: index.md
+  - Проект:
+      - Обзор: project/overview.md
+      - Дорожная карта: project/roadmap.md
+  - Backend:
+      - Техническое задание: backend/tech_spec.md
+  - Frontend:
+      - Гайд и структура: frontend/tech_spec.md
+  - QA:
+      - API Cards: qa/api_cards.md
+      - Руководство по тестированию: qa/test_guide.md
+  - База данных:
+      - Схема и миграции: db/schema_overview.md
+  - Инфраструктура:
+      - CI/CD: infra/ci_cd.md
+      - Docker/Compose: infra/docker.md
+      - Деплой: infra/deployment.md
